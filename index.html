@@ -1,90 +1,151 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<!-- DOCTYPE宣言　HTML5から簡単になった -->
+<!doctype html>
+
+<!-- DOCTYPE宣言後は、必ずhtmlタグで全体を囲む -->
+<html lang="ja">
+
+<!-- head内にwebページの設定内容を書いていく -->
+ <head>
+<!-- 日本語使えるようにする -->
+  <meta charset="UTF-8">
+<!-- タブに出てくる名前を設定する -->
+  <title>みんなでデジタル化</title>
+<!-- 画面を12分割して構成するためにbootstrapを使う -->
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+
+<!-- bodyの中に、ウェブサイトに表示する中身を書いていく -->
+ <body>
+  <div class="container">
+    <header>
+      <h1>トヨタ技能者養成所  「みんなでデジタル化」</h1>
+    </header>
+    <!-- class rowで、12分割の行をレイアウトできる -->
+    <div class="row">
+    <!-- col-md-●　は、12分割された行のうち、●/12を使うという意味 -->
+      <div class="col-md-1">
+        <img src ="images/star_blue.png">
       </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
+      <div class="col-md-10">
+        <h1 id="recommend">頑張っているMS365ツールを登録し、仲間とコミュニケーションしてみてね</h1>
       </div>
-    </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
+      <div class="col-md-1">
+        <img src ="images/star_blue.png">
       </div>
     </div>
+    <hr>
+    
+    <div class="row">
+      <div class="col-md-3">
+            <label>お名前</label>
+            <br></br>
+            <!-- form-controlは、Bootstrapでイケてる感じのボタンにしてくれるもの -->
+            <input id="name" type="text" class="form-control" maxlength="20" />
+      </div>
+      
+      <div class="col-md-3">
+          <label>所属室課</label>
+          <br></br>
+            <select id="org" class="form-control">
+                <option value="unselected">選択してください</option>
+                <option value="部付・部付G">部付・部付G</option>
+                <option value="学園室">学園室</option>
+                <option value="人づくり">人づくり</option>
+                <option value="技教育">技教育</option>
+                <option value="五輪">五輪</option>
+            </select>
+      </div>
+      
+      <div class="col-md-3">
+         <label>頑張りたい・頑張っている業務用アプリ</label>
+         <br></br>
+            <select id="trying_app" class="form-control">
+               <option value="unselected">選択してください</option>
+               <option value="Teams">Teams</option>
+               <option value="apps">PowerApps</option>
+               <option value="automate">PowerAutomate</option>
+               <option value="bi">PowerBI</option>
+               <option value="func">Excel(関数)</option>
+               <option value="macro">Excel（マクロ)</option>
+               <option value="spo">SPO（サイトづくり）</option>
+               <option value="etc">その他MS365</option>
+            </select>
+      </div>
+      <div class="col-md-3">
+        <br></br>
+        <button type="button" class="btn btn-lg" id="member_submit">登録する</button>
+        <p>※複数登録大歓迎</p>
+
+      </div> 
+    </div> 
+     
+   <hr>
+    <div class="row">
+      <div class="col-md-3">
+        <p>何に取り組もうか迷う人は、デジタル少年をクリックしてみよう（中二病風にランダムでお勧めしてくれるよ）</p>
+      </div>
+      <div class="col-md-1">
+        <img src="images/boy_programmer.png" id="geek_boy">
+      </div>
+      <div class="col-md-2">
+        <form>
+          <label>業務用アプリ名</label>
+          <input type="text" class="form-control" id="app_name" disabled>
+        </form>
+      </div>
+      <div class="col-md-6">
+          <label>説明</label>
+          <textarea id="app_explanation" disabled>少年を押すと、ここに説明が表示されるよ</textarea>
+      </div>
+   </div>
+   <hr>
+
+      <div class="row"> 
+        <div class="col-md-3">
+          <h3 id="title_teams" >Teams</h3>
+          <ul class="teams"></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 id="title_apps">PowerApps</h3>
+          <ul class="apps"></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 id="title_automate">PowerAutomate</h3>
+          <ul class='automate'></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 id="title_bi">PowerBI</h3>
+          <ul class='bi'></ul>
+        </div>
+        
+      </div> 
+
+      <div class="row"> 
+        <div class="col-md-3">
+          <h3 id="title_func">Excel（関数）</h3>
+          <ul class='func'></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 id="title_macro">Excel(マクロ)</h3>
+          <ul class='macro'></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 id="title_spo">SPO(サイト作り)</h3>
+          <ul class='spo'></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 id="title_etc">その他MS365</h3>
+          <ul class='etc'></ul>
+        </div>
+      </div> 
+
+    <script src="script.js"></script>  
   </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
-</body>
+ </body>
 </html>
