@@ -109,6 +109,9 @@ const addMember = name => {
     orgElem.value = "unselected";
     appElem.value = "unselected";
     nameElem.value = "";
+
+    appExplanation.value = "登録ありがとうございました！一緒に頑張りましょう！！"
+ 
 };
 
 //削除ボタンに付与する、登録したメンバーを削除する関数。
@@ -152,6 +155,8 @@ submitElem.addEventListener('click', evt => {
     evt.preventDefault();
     // メンバーを登録していく関数    
     addMember(enteredName);
+
+     
 });
 
 // ランダムでアプリの説明を表示する関数
@@ -206,7 +211,7 @@ const geekBoyExample = () => {
     } else if (randomNum < 7) {
         appName.value = "SPO(サイト作り)" ;
         appExplanation.value
-        = "SharePointOnlineのWeb作成機能を使えば、プログラミングなしで、トヨタ内に発信するWebページが開発できる。君の伝えたいメッセージ、7万人に届けてみないかい？"
+        = "SharePointOnlineのWeb作成機能を使えば、プログラミングなしで、直感的に社内に発信するWebページが開発できる。君の伝えたいメッセージ、7万人に届けてみないかい？"
         changeColorsToBlack();
         document.getElementById("title_spo").style.color = "red";
     }
