@@ -4,7 +4,7 @@
 // 繰り返しの処理をより簡略に記述できそう
 // データベースとの連携がまだできていない
 // （このままだとサイトをリフレッシュした瞬間すべて消える）
-
+"use strict"
 // 名前がインプットされるFormの要素を変数に格納
 const nameElem = document.getElementById("name");
 // 組織が選択されるFormの要素を変数に格納
@@ -109,7 +109,8 @@ const addMember = name => {
     orgElem.value = "unselected";
     appElem.value = "unselected";
     nameElem.value = "";
-
+    
+    appName.value = ""
     appExplanation.value = "登録ありがとうございました！一緒に頑張りましょう！！"
  
 };
